@@ -1,4 +1,5 @@
 import React from "react";
+import * as R from "ramda";
 import { connect } from "react-redux";
 import { Tag } from "antd";
 import { useTranslation } from "react-i18next";
@@ -29,7 +30,7 @@ const Recents = ({ recents, fetchCity, deleteRecent }) => {
 
 const enhancer = connect(
   ({ city }) => ({
-    recents: city.recents,
+    recents: R.propOr([], "city", city.recents),
   }),
   { fetchCity, deleteRecent }
 );
