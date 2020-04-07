@@ -1,68 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# WeatherApp ReactJS
 
-## Available Scripts
+### Challenge
 
-In the project directory, you can run:
+Your task is to simply build a forecast application. The requirements are the following:
+The user must be able to do a search by the city name. Each time the user searches the forecast for a city the result should be shown indicating:
 
-### `yarn start`
+- Temperature
+- Pressure
+- Humidity
+- Max temperature
+- Min temperature
+- A Map showing the location of the city (using long and lat)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You need to maintain a list with the last 5 searched cities (it should be persisted in local storage). Any item of the list can be deleted. Every time a city from the above list is clicked, the forecast information should be shown as in step (2). Add at least one additional feature that you think would be useful for the user.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Some tips:
 
-### `yarn test`
+- The forecast prediction must be consumed using this api: https://openweathermap.org/current
+- You must use https://github.com/facebookincubator/create-react-app to accomplish this task.
+- Include comments in code where necessary.
+- We recommend you follow this style guide: https://github.com/airbnb/javascript/tree/master/react.
+- While an elaborate graphic design is not necessary, you should still make your page look nice.
+- If you cannot complete all the requirements, include an explanation of how you would go about completing them if given more time.
+- If you take code from somewhere like stackoverflow, please add a comment of why you did it and why you think it was the best solution.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `yarn build`
+You need to have a GoogleMap API Key and a OpenWeatherMap API Key.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Clone this repository
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Run `npm install`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Create `.env` with this props: `REACT_APP_OPENWEATHER_URI`, `REACT_APP_API_KEY`, `REACT_APP_GOOGLE_API`
 
-### `yarn eject`
+- Edit `.env` and fill with your generated API keys
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Save and run `npm start`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Development
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This is a challenge from IT Croud Argentina
