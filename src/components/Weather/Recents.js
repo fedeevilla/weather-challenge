@@ -30,7 +30,7 @@ const Recents = ({ recents, fetchCity, deleteRecent }) => {
 
 const enhancer = connect(
   ({ city }) => ({
-    recents: R.propOr([], "city", city.recents),
+    recents: city.recents,
   }),
   { fetchCity, deleteRecent }
 );
