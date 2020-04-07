@@ -1,6 +1,6 @@
 # WeatherApp ReactJS
 
-Live Demo on https://weather-challenge.netlify.com/ or https://weather-challenge.netlify.com
+Live Demo on https://fedeevilla-weather-challenge.glitch.me/ or https://weather-challenge.netlify.com
 
 ### Challenge
 
