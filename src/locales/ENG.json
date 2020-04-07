@@ -1,0 +1,23 @@
+{
+  "layout": {
+    "title": "Weather App",
+    "language": "Switch to Spanish"
+  },
+  "searchBox": {
+    "placeholder": "City, Country"
+  },
+  "weatherDetails": {
+    "city": "City",
+    "convertToF": "Convert to ºF",
+    "convertToC": "Convert to ºC",
+    "viewMap": "View map",
+    "wind": "Wind",
+    "temperature": "Temperature",
+    "minMax": "Min / Max",
+    "humidity": "Humidity",
+    "pressure": "Pressure"
+  },
+  "recents": {
+    "title": "Recents"
+  }
+}

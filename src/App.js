@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import "antd/dist/antd.css";
+import { Input } from "antd";
+import Layout from "./components/Layout/Layout";
+import { Content, WrapperContent } from "./styles";
+import WeatherDetails from "./components/Weather/WeatherDetails";
+import Recents from "./components/Weather/Recents";
+import { fetchCity, loadRecents } from "./store/actions/city";
+import { useTranslation } from "react-i18next";
 
-function App() {
+const { Search } = Input;
+
+const App = ({ fetchCity, loading, loadRecents }) => {
+  const { t } = useTranslation();
+
+  useEffect(() => loadRecents());
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Content>
+        <Search
+          placeholder={t("searchBox:placeholder")}
+          onSearch={(value) => fetchCity(value)}
+          enterButton
+          style={{ width: 600 }}
+          loading={loading}
+        />
+        <WrapperContent>
+          <WeatherDetails />
+          <Recents />
+        </WrapperContent>
+      </Content>
+    </Layout>
   );
-}
+};
 
-export default App;
+const enhancer = connect(
+  ({ city }) => ({
+    loading: city.loading,
+  }),
+  { fetchCity, loadRecents }
+);
+
+export default enhancer(App);

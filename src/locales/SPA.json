@@ -1,0 +1,23 @@
+{
+  "layout": {
+    "title": "Aplicación del clima",
+    "language": "Cambiar a Inglés"
+  },
+  "searchBox": {
+    "placeholder": "Ciudad, País"
+  },
+  "weatherDetails": {
+    "city": "Ciudad",
+    "convertToF": "Convertir a ºF",
+    "convertToC": "Convertir a ºC",
+    "viewMap": "Ver mapa",
+    "wind": "Viento",
+    "temperature": "Temperatura",
+    "minMax": "Min / Max",
+    "humidity": "Humedad",
+    "pressure": "Presión"
+  },
+  "recents": {
+    "title": "Recientes"
+  }
+}
