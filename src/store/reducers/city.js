@@ -17,7 +17,7 @@ export const city = (state = initialState, { type, payload = {} }) => {
     case LOAD_RECENTS:
       return {
         ...state,
-        recents: JSON.parse(localStorage.getItem("recents")),
+        recents: JSON.parse(localStorage.getItem("recents")) || [],
       };
     case FETCH_CITY_STARTED:
       return {
