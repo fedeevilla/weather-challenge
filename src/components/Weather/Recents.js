@@ -1,5 +1,4 @@
 import React from "react";
-import * as R from "ramda";
 import { connect } from "react-redux";
 import { Tag } from "antd";
 import { useTranslation } from "react-i18next";
