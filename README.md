@@ -1,5 +1,7 @@
 # WeatherApp ReactJS
 
+Live Demo on https://fedeevilla-weather-challenge.glitch.me/ or https://weather-challenge.netlify.com
+
 ### Challenge
 
 Your task is to simply build a forecast application. The requirements are the following:
