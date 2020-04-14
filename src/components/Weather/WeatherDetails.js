@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { Card, Popover, Button } from "antd";
+import { Card, Button } from "antd";
 import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
-import { GoogleMap, Marker } from "@react-google-maps/api";
+
+import ViewMapButton from "./ViewMapButton";
 
 import {
   Title,
@@ -37,43 +38,7 @@ const WeatherDetails = ({ city, loading }) => {
                   ? t("weatherDetails:convertToC")
                   : t("weatherDetails:convertToF")}
               </Button>
-
-              <Popover
-                placement="bottomLeft"
-                title={city.name}
-                content={
-                  <GoogleMap
-                    mapContainerStyle={{
-                      height: "240px",
-                      width: "500px",
-                      borderRadius: 5,
-                    }}
-                    clickableIcons={false}
-                    zoom={14}
-                    center={{
-                      lat: city.coord.lat,
-                      lng: city.coord.lon,
-                    }}
-                  >
-                    <Marker
-                      position={{
-                        lat: city.coord.lat,
-                        lng: city.coord.lon,
-                      }}
-                    />
-                  </GoogleMap>
-                }
-                trigger="click"
-              >
-                <Button
-                  type="default"
-                  shape="round"
-                  size="small"
-                  style={{ marginLeft: 5 }}
-                >
-                  {t("weatherDetails:viewMap")}
-                </Button>
-              </Popover>
+              <ViewMapButton city={city} />
             </div>
           </WrapperTitle>
           <WrapperInfo>
@@ -89,7 +54,7 @@ const WeatherDetails = ({ city, loading }) => {
                 {fahrenheit
                   ? toFahrenheit(city.main.temp_min)
                   : toCelsius(city.main.temp_min)}
-                º ~
+                º ~{" "}
                 {fahrenheit
                   ? toFahrenheit(city.main.temp_max)
                   : toCelsius(city.main.temp_max)}
