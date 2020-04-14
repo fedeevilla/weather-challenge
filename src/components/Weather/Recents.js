@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Tag } from "antd";
 import { useTranslation } from "react-i18next";
+import PropTypes from "prop-types";
 
 import { fetchCity, deleteRecent } from "../../store/actions/city";
 import { WrapperRecents, Title } from "./styles";
@@ -33,5 +34,11 @@ const enhancer = connect(
   }),
   { fetchCity, deleteRecent }
 );
+
+Recents.propTypes = {
+  recents: PropTypes.array,
+  fetchCity: PropTypes.func,
+  deleteRecent: PropTypes.func,
+};
 
 export default enhancer(Recents);

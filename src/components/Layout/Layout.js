@@ -1,6 +1,7 @@
 import React from "react";
 import { Layout as AntdLayout, Avatar, Tooltip } from "antd";
 import { useTranslation } from "react-i18next";
+import PropTypes from "prop-types";
 
 import { Container, Content, Title } from "./styles";
 import ContainerContext from "./ConteinerContext";
@@ -36,6 +37,10 @@ const Layout = ({ children }) => {
       </ContainerContext.Provider>
     </Container>
   );
+};
+
+Layout.propTypes = {
+  children: PropTypes.element,
 };
 
 export default Layout;

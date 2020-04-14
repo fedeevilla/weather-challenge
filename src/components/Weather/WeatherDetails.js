@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Card, Popover, Button } from "antd";
 import { useTranslation } from "react-i18next";
+import PropTypes from "prop-types";
 import { GoogleMap, Marker } from "@react-google-maps/api";
 
 import {
@@ -113,6 +114,11 @@ const WeatherDetails = ({ city, loading }) => {
       )}
     </Card>
   );
+};
+
+WeatherDetails.propTypes = {
+  city: PropTypes.object,
+  loading: PropTypes.bool,
 };
 
 const enhancer = connect(({ city }) => ({

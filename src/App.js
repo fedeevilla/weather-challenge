@@ -2,12 +2,14 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import "antd/dist/antd.css";
 import { Input } from "antd";
+import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
+
 import Layout from "./components/Layout/Layout";
-import { Content, WrapperContent } from "./styles";
 import WeatherDetails from "./components/Weather/WeatherDetails";
 import Recents from "./components/Weather/Recents";
 import { fetchCity, loadRecents } from "./store/actions/city";
-import { useTranslation } from "react-i18next";
+import { Content, WrapperContent } from "./styles";
 
 const { Search } = Input;
 
@@ -41,5 +43,11 @@ const enhancer = connect(
   }),
   { fetchCity, loadRecents }
 );
+
+App.propTypes = {
+  fetchCity: PropTypes.func,
+  loading: PropTypes.bool,
+  loadRecents: PropTypes.func,
+};
 
 export default enhancer(App);
